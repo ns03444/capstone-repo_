@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Nick's App</title>
+  </head>
+<body class="p-3 mb-2 bg-secondary text-white">
+<div>
+  <div class="jumbotron">
+          <center><h1>Capstone News Aggregator</h1>
+              <a href="{% url 'index' %}" class="btn btn-lg btn-dark">Get my morning news</a></center>
+          <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/index" class="nav-link">News</a></li>
+        <li class="nav-item"><a href="/stock_page" class="nav-link ">Hottest Stocks</a></li>
+        <li class="nav-item"><a href="/graph_page" class="nav-link active">Analytics</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">More</a></li>
+      </ul>
+    </header>
+  </div>
+</div>
+<center>
+<h2>Data Visualization with Bokeh</h2>
+<p>The following graphs were created with the Bokeh Python library. This library is one of the leading python packages used for data vizualization.</br> Each one represents the historical price variations/trends for the S&P 500 index. Each graph is titled with the respective time interval for the chart.
+  <div>
+    <div>
+    {{div | safe}}
+    {{divs | safe}}
+    {{div1 | safe}}
+  </div>
+</center>
+  </body>
+      <script type='text/javascript' src='https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.min.js'></script>
+      <script type='text/javascript' src='https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.0.min.js'></script>
+      <script type='text/javascript' src='https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.0.min.js'></script>
+      <script type='text/javascript' src='https://cdn.bokeh.org/bokeh/release/bokeh-api-2.3.0.min.js'></script>
+      {{script | safe}}
+      {{scripts | safe}}
+      {{script1 | safe}}
+</html>

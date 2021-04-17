@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Nick's App</title>
+</head>
+<body class="p-3 mb-2 bg-secondary text-white">
+  <center>
+    <div class="jumbotron">
+        <h1>Capstone News Aggregator</h1><br>
+        <div><a href="{% url 'index' %}" class="btn btn-lg btn-dark">Get my morning news</a></div><br>
+        <header class="d-flex justify-content-center py-3;">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/index" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="/stock_page" class="nav-link">Hottest Stocks</a></li>
+          <li class="nav-item"><a href="/image_page" class="nav-link active">My Data Analysis</a></li>
+          <li class="nav-item"><a href="/graph_page" class="nav-link">Vizualization with Bokeh</a></li>
+        </ul>
+      </header>
+  </div>
+  <br>
+  <h2>Analyzing 5 Years of Historical Data</h2>
+  </center>
+  <br>
+  <div>
+    <p>The second portion of my Capstone Project incapsulates an in-depth analysis of 3 closely related stocks (in terms of industry categorization). Since we are in the midst of the 5G network rollout (deployment process), I thought that choosing to analyze America's top wirless network providers: Verizon, AT&T, and T-mobile. Throughout this analysis, I will provide detailed vizualizations of historical data and the insights that can be taken from them</p>
+  </div>
+  <div class="row" style="width: 100%">
+    <img src="{% static "images/cp.png" %}" alt='error'>
+    <p> The chart displayed above represents the closing price of each company over the past 5 years. As you can tell, T-mobile has been far more profitable over this time period.</p>
+  </div>
+  <h3>Volume</h3>
+  <img src="{% static "images/vol.png" %}" alt='error'>
+  <h3>Measuring Volatility</h3>
+  <img src="{% static "images/volatile.png" %}" alt='error'>
+  <h3>Market Capital Comparison</h3>
+  <img src="{% static "images/mrkt_cap.png" %}" alt='error'>
+
+
+
+</body>
+
+</html>

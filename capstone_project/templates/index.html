@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Nick's App</title>
+  </head>
+<body class="p-3 mb-2 bg-secondary text-white">
+
+<center>
+  <div class="jumbotron">
+      <h1>Capstone News Aggregator</h1>
+      <a href="{% url 'index' %}" class="btn btn-lg btn-dark">Get my morning news</a>
+      <header class="d-flex justify-content-center py-3;">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/index" class="nav-link active">News</a></li>
+        <li class="nav-item"><a href="/stock_page" class="nav-link">Hottest Stocks</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">More</a></li>
+      </ul>
+    </header>
+</div>
+</center>
+  <div class="container" style="width: 100%">
+    <div class="row" style="width: 100%">
+    <center><h3 style="margin: 3rem;">Barron's Latest Technology Sector News</h3></center>
+    {% for object in barrons_lst %}
+    <div class="card" style="width: 25rem;border:2px black solid; margin: 0 auto;">
+  <div class="card-body">
+    <h5 class="card-title"><div class="card-body">
+      <a href="{{object.link}}"><h5 class="card-title">{{object.title}}</h5></a>
+        <p class='text-dark'>{{object.time}}</p>
+    </div></h5>
+    </div>
+  </div>
+    {% endfor %}
+  </div>
+ </div>
+ <div class="container" style="width: 100%;">
+  <div class="row" style="width 100%">
+
+      <center><h3 style="margin: 3rem;">Google's Latest Technology Sector News</h3></center>
+      {% for object in google_lst %}
+      <div class="card" style="width: 25rem;border:2px black solid; margin: 0 auto;">
+    <div class="card-body">
+      <h5 class="card-title"><div class="card-body">
+        <a href="{{object.link}}"><h5 class="card-title">{{object.title}}</h5></a>
+          <p class='text-dark'>{{object.time}}</p>
+      </div></h5>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+<div class="container" style="width: 100%">
+  <div class="row" style="width 100%">
+
+      <center><h3 style="margin: 3rem;">Bloomberg's Latest Technology Sector News</h3></center>
+      {% for object in bloomberg_lst %}
+      <div class="card" style="width: 25rem;border:2px black solid; margin: 0 auto;" >
+    <div class="card-body">
+      <h5 class="card-title"><div class="card-body">
+        <a href="{{object.link}}"><h5 class="card-title">{{object.title}}</h5></a>
+          <p class='text-dark'>{{object.time}}</p>
+      </div></h5>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+</body>
+</html>
